@@ -1,0 +1,143 @@
+/* 共通部分 */
+html {
+    font-size: 100%;
+}
+body{
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    background-color: rgb(244, 212, 165);
+}
+table{
+    margin: auto;
+}
+
+label{
+    font-weight: bold;
+}
+a:hover{
+    cursor: pointer;
+}
+
+/* ヘッダー */
+.page-header{
+    background-image: url(../images/green.jpg);
+    background-size: cover;
+    background-position: center top;
+    height: 150px;
+}
+.title-text{
+    margin: 0;
+    text-align: center;
+    padding-top: 50px;
+    color: rgb(32, 30, 30);
+}
+/* メイン */
+.wrapper{
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+}
+.item,.price,.text{
+    border-radius: 7px;
+    font-size: 1rem;
+    padding: 5px;
+    margin: 15px;
+    width: 40%;
+    height: 30px;
+}
+.form-list-btn{
+    padding:5 20px;
+}
+
+/* 表 */
+.table-container{
+    border-spacing: 0;
+    width: 65%;
+    table-layout: fixed;
+    border: 2px solid rgb(106, 102, 102);
+}
+.table-header,.table-data{
+    border-bottom: 2px solid rgb(106, 102, 102);
+}
+.table-row-header{
+    background-color: #30ae4b;
+}
+.table-row-data{
+    background-color: rgb(248, 246, 242);
+}
+.table{
+    margin-bottom: 50px;
+}
+a{
+    text-decoration: none;
+    color:#050509;
+}
+.data-link{
+    text-decoration: none;
+    color:#050509;
+}
+.get-form-list{
+    justify-content: center;
+}
+.get-container{
+    margin: 0%;
+}
+.get-form-list{
+    justify-content: center;
+}
+/* コンポーネント */
+/* 送信ボタン */
+.submit-button{
+    /* ブラウザ特有のスタイルを無効に */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    /* 整える */
+    margin: 1em 0; /* 前後の隙間 */
+    padding: 0.5em 1.2em; /* 塗りの余白 */
+    font-size: 1em; /* フォントサイズ */
+    background-color: #0d9c2c; /* 背景色 */
+    color: #FFF; /* テキストカラー */
+    cursor: pointer; /* カーソルを指マークに */
+    border-radius: 3px; /* 角の丸み */
+    border: 0; /* 枠線を消す */
+    transition: 0.3s; /* ホバーの変化を滑らかに */
+}
+/* 更新ボタン */
+.detail-submit-button{
+    /* ブラウザ特有のスタイルを無効に */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    /* 整える */
+    margin: 1em 0; /* 前後の隙間 */
+    padding: 0.5em 1.2em; /* 塗りの余白 */
+    font-size: 1em; /* フォントサイズ */
+    background-color: #1196e3; /* 背景色 */
+    color: #FFF; /* テキストカラー */
+    cursor: pointer; /* カーソルを指マークに */
+    border-radius: 3px; /* 角の丸み */
+    border: 0; /* 枠線を消す */
+    transition: 0.3s; /* ホバーの変化を滑らかに */
+}
+/* 削除ボタン */
+.delete-button{
+    /* ブラウザ特有のスタイルを無効に */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    /* 整える */
+    margin: 1em 0; /* 前後の隙間 */
+    padding: 0.3em 1em; /* 塗りの余白 */
+    font-size: 1em; /* フォントサイズ */
+    background-color: #e0311d; /* 背景色 */
+    color: #FFF; /* テキストカラー */
+    cursor: pointer; /* カーソルを指マークに */
+    border-radius: 3px; /* 角の丸み */
+    border: 0; /* 枠線を消す */
+    transition: 0.3s; /* ホバーの変化を滑らかに */
+}
