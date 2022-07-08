@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('category,');
+            $table->string('category');
             $table->integer('price');
             $table->text('note')->nullable();
             $table->timestamps();

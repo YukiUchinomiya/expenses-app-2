@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -17,10 +18,10 @@ class UserController extends Controller
 
     public function index() {
 
-        //WIPデータ取得不備調査中
-        // $user = User::all();
+        $users = DB::select('select * from users');
+        $data = ['users' => $users];
 
-        return view('contents.index');
+        return view('contents.index',$data);
     }
 
     public function practice() {

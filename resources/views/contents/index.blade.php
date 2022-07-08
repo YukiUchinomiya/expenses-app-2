@@ -52,15 +52,14 @@
                         <th class="table-header">削除</th>
                     </tr>
                     <!-- 最新表示データ10件 -->
-                    {{-- TODO::データ準備中 --}}
-                    {{-- @forelse ($posts as $index => $value) --}}
+                    @foreach ($users as $user)
                     <tr class="table-row-data">
-                        <td id="id" class="table-data">1</td>
-                        <td id="category" class="table-data">食費</td>
-                        <td id="price" class="table-data">3000</td>
+                        <td id="id" class="table-data">{{ $user->id }}</td>
+                        <td id="category" class="table-data">{{ $user->category}}</td>
+                        <td id="price" class="table-data">{{ $user->price }}</td>
                         <td class="table-data"><button class="delete-button" type="submit">削除</button></td>
                     </tr>
-                    {{-- @endforelse --}}
+                    @endforeach
                 </table>
             </div>
         </section>
