@@ -10,27 +10,22 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    private $posts = [
-        'A',
-        'B',
-        'C',
-    ];
 
     public function index() {
+        $users = User::latest()->get();
 
+        return view('contents.index')
+        ->with(['users' => $users]);
+    }
+
+    public function update (){
         $users = DB::select('select * from users');
-        $data = ['users' => $users];
 
-        return view('contents.index',$data);
+        return view('contents.index',$users);
     }
 
     public function practice() {
         return view('contents.practice')
             ->with(['posts' => $this->posts]);
-    }
-
-    public function update (){
-        return view('contents.detail')
-        ->with(['hogè' => $this->$_COOKIE]);
     }
 }

@@ -20,7 +20,7 @@
         <section class="wrapper form">
             <div class="content-form">
                 <h2 class="form-title">項目/金額入力</h2>
-                <form action="index.php" method="post">
+                <form action={{ route('update') }} method="post">
                     <div class="form-list">
                         <label for="category">項目</label>
                         <input type="text" class="item" name="category" placeholder="食費">

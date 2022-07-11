@@ -20,5 +20,7 @@ Route::get('/', function () {
 
 Route::get('index', [UserController::class, 'index'])->name('index');
 
+Route::post('update',[UserController::class, 'update'])->name('update');
+
 //試行用
 Route::get('practice', [UserController::class, 'practice']);
