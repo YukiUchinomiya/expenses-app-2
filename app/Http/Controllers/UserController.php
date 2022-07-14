@@ -18,10 +18,30 @@ class UserController extends Controller
         ->with(['users' => $users]);
     }
 
-    public function update (){
-        $users = DB::select('select * from users');
+    public function create (Request $request){
+        //簡易的なバリデーション
+        $request->validate([
+            'category' => 'required',
+            'price' => 'required',
+        ],
+        [
+            'category.required' => 'タイトルを入力してください',
+            'price.required' => '本文を入力してください',
+        ]
+    );
 
-        return view('contents.index',$users);
+        //インスタンス生成
+        $user = new User();
+
+        //入力値をinsert
+        $user->category = $request->category;
+        $user->price = $request->price;
+        $user->note = $request->note;
+        $user->save();
+
+        //INSERT処理
+        return redirect()
+            ->route('contents.index');
     }
 
     public function practice() {

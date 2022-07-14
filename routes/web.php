@@ -18,9 +18,11 @@ Route::get('/', function () {
     return view('contents.index');
 });
 
-Route::get('index', [UserController::class, 'index'])->name('index');
+Route::get('index', [UserController::class, 'index'])
+    ->name('contents.index');
 
-Route::post('update',[UserController::class, 'update'])->name('update');
+Route::post('create',[UserController::class, 'create'])
+    ->name('contents.create');
 
 //試行用
 Route::get('practice', [UserController::class, 'practice']);

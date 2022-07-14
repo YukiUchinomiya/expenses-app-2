@@ -86,6 +86,9 @@ a{
 .get-form-list{
     justify-content: center;
 }
+.error{
+    color: #e0311d;
+}
 /* コンポーネント */
 /* 送信ボタン */
 .submit-button{

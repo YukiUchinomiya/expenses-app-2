@@ -20,14 +20,21 @@
         <section class="wrapper form">
             <div class="content-form">
                 <h2 class="form-title">項目/金額入力</h2>
-                <form action={{ route('update') }} method="post">
+                <form action={{ route('contents.create') }} method="post">
+                    @csrf
                     <div class="form-list">
                         <label for="category">項目</label>
-                        <input type="text" class="item" name="category" placeholder="食費">
+                        <input type="text" class="item" name="category" placeholder="食費" value="{{ old('title') }}">
+                        @error('category')
+                            <div class="error">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-list">
                         <label for="price">金額</label>
-                        <input type="text" class="price" name="price" placeholder="1000">
+                        <input type="text" class="price" name="price" placeholder="1000" value="{{ old('price') }}">
+                        @error('price')
+                            <div class="error">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-list">
                         <label for="note">メモ</label>
@@ -54,9 +61,9 @@
                     <!-- 最新表示データ10件 -->
                     @foreach ($users as $user)
                     <tr class="table-row-data">
-                        <td id="id" class="table-data">{{ $user->id }}</td>
-                        <td id="category" class="table-data">{{ $user->category}}</td>
-                        <td id="price" class="table-data">{{ $user->price }}</td>
+                        <td id="id" class="table-data">{{ e($user->id) }}</td>
+                        <td id="category" class="table-data">{{ e($user->category)}}</td>
+                        <td id="price" class="table-data">{{ e($user->price) }}</td>
                         <td class="table-data"><button class="delete-button" type="submit">削除</button></td>
                     </tr>
                     @endforeach
