@@ -15,7 +15,7 @@ class UserController extends Controller
         $users = User::latest()->get();
 
         return view('contents.index')
-        ->with(['users' => $users]);
+            ->with(['users' => $users]);
     }
 
     public function create (Request $request){
@@ -42,6 +42,13 @@ class UserController extends Controller
         //INSERT処理
         return redirect()
             ->route('contents.index');
+    }
+
+    public function detail(User $user){
+        $user = User::latest()->get();
+
+        return view('contents.detail')
+            ->with(['users' => $user]);
     }
 
     public function practice() {

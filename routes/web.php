@@ -24,5 +24,8 @@ Route::get('index', [UserController::class, 'index'])
 Route::post('create',[UserController::class, 'create'])
     ->name('contents.create');
 
+Route::get('detail/{user}', [UserController::class, 'detail'])
+    ->name('contents.detail');
+
 //試行用
 Route::get('practice', [UserController::class, 'practice']);

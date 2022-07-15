@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{asset('css/reset.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <title>家計簿</title>
+    <title>項目詳細</title>
 </head>
 <body>
     {{-- TODO::画面作成 --}}
@@ -20,19 +20,20 @@
         <!-- 入力フォーム -->
         <section class="wrapper form">
             <div class="content-form">
-                <h2 class="form-title">項目/金額入力</h2>
-                <form action="index.php" method="post">
+                <h2 class="form-title">詳細</h2>
+                <form action="" method="post">
+                    @csrf
                     <div class="form-list">
                         <label for="category">項目</label>
-                        <input type="text" class="item" name="category" placeholder="食費">
+                        <input type="text" class="item" name="category" placeholder="食費" value="{{ old('category', $user->category) }}">
                     </div>
                     <div class="form-list">
                         <label for="price">金額</label>
-                        <input type="text" class="price" name="price" placeholder="1000">
+                        <input type="text" class="price" name="price" placeholder="1000" value="{{ old('price', $user->price) }}">
                     </div>
                     <div class="form-list">
                         <label for="note">メモ</label>
-                        <input type="text" class="text" name="note" placeholder="コンビニで購入">
+                        <input type="text" class="text" name="note" placeholder="コンビニで購入" value="{{ old('note', $user->note) }}">
                     </div>
                     <div class="form-list-btn">
                         <button class="submit-button" type="submit" name="submit-button">送信</button>

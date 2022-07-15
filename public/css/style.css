@@ -109,7 +109,7 @@ a{
     transition: 0.3s; /* ホバーの変化を滑らかに */
 }
 /* 更新ボタン */
-.detail-submit-button{
+.detail-button{
     /* ブラウザ特有のスタイルを無効に */
     -moz-appearance: none;
     -webkit-appearance: none;

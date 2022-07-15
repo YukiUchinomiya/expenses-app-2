@@ -38,7 +38,7 @@
                     </div>
                     <div class="form-list">
                         <label for="note">メモ</label>
-                        <input type="text" class="text" name="note" placeholder="コンビニで購入">
+                        <input type="text" class="text" name="note" placeholder="コンビニで購入" value="{{ old('note') }}">
                     </div>
                     <div class="form-list-btn">
                         <button class="submit-button" type="submit" name="submit-button">送信</button>
@@ -62,8 +62,8 @@
                     @foreach ($users as $user)
                     <tr class="table-row-data">
                         <td id="id" class="table-data">{{ e($user->id) }}</td>
-                        <td id="category" class="table-data">{{ e($user->category)}}</td>
-                        <td id="price" class="table-data">{{ e($user->price) }}</td>
+                        <td id="category" class="table-data"><a href="{{ route('contents.detail', $user) }}">{{ e($user->category)}}</a></td>
+                        <td id="price" class="table-data"><a href="{{ route('contents.detail', $user) }}">{{ e($user->price) }}</a></td>
                         <td class="table-data"><button class="delete-button" type="submit">削除</button></td>
                     </tr>
                     @endforeach
