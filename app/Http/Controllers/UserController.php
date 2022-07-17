@@ -60,7 +60,7 @@ class UserController extends Controller
         ]
     );
 
-        //入力値をinsert
+        //入力値で更新
         $user->category = $request->category;
         $user->price = $request->price;
         $user->note = $request->note;
@@ -68,6 +68,12 @@ class UserController extends Controller
 
         return redirect()
             ->route('contents.index');
+    }
+
+    public function delete(User $user){
+
+        return view('contents.delete')
+            ->with(['user' => $user]);
     }
 
     public function practice() {

@@ -32,5 +32,8 @@ Route::patch('update/{user}', [UserController::class, 'update'])
     ->name('contents.update')
     ->where('user', '[0-9]+');
 
+Route::get('delete/{user}', [UserController::class, 'delete'])
+    ->name('contents.delete');
+
 //試行用
 Route::get('practice', [UserController::class, 'practice']);

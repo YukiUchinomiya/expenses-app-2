@@ -64,7 +64,7 @@
                         <td id="id" class="table-data">{{ e($user->id) }}</td>
                         <td id="category" class="table-data"><a href="{{ route('contents.detail', $user) }}">{{ e($user->category)}}</a></td>
                         <td id="price" class="table-data"><a href="{{ route('contents.detail', $user) }}">{{ e($user->price) }}</a></td>
-                        <td class="table-data"><button class="delete-button" type="submit">削除</button></td>
+                        <td class="table-data"><a href="{{ route('contents.delete', $user) }}"><button class="delete-button" type="get" name="delete-button">削除</button></a></td>
                     </tr>
                     @endforeach
                 </table>
