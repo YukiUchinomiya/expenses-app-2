@@ -32,6 +32,33 @@ class UserController extends Controller
 
         //インスタンス生成
         $user = new User();
+        //入力値をinsert
+        $user->category = $request->category;
+        $user->price = $request->price;
+        $user->note = $request->note;
+        $user->save();
+
+        return redirect()
+            ->route('contents.index');
+    }
+
+    public function detail(User $user){
+
+        return view('contents.detail')
+            ->with(['user' => $user]);
+    }
+
+    public function update(Request $request, User $user){
+        //簡易的なバリデーション
+        $request->validate([
+            'category' => 'required',
+            'price' => 'required',
+        ],
+        [
+            'category.required' => 'タイトルを入力してください',
+            'price.required' => '本文を入力してください',
+        ]
+    );
 
         //入力値をinsert
         $user->category = $request->category;
@@ -39,16 +66,8 @@ class UserController extends Controller
         $user->note = $request->note;
         $user->save();
 
-        //INSERT処理
         return redirect()
             ->route('contents.index');
-    }
-
-    public function detail(User $user){
-        $user = User::latest()->get();
-
-        return view('contents.detail')
-            ->with(['users' => $user]);
     }
 
     public function practice() {

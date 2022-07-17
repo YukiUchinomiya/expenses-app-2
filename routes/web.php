@@ -25,7 +25,12 @@ Route::post('create',[UserController::class, 'create'])
     ->name('contents.create');
 
 Route::get('detail/{user}', [UserController::class, 'detail'])
-    ->name('contents.detail');
+    ->name('contents.detail')
+    ->where('user', '[0-9]+');
+
+Route::patch('update/{user}', [UserController::class, 'update'])
+    ->name('contents.update')
+    ->where('user', '[0-9]+');
 
 //試行用
 Route::get('practice', [UserController::class, 'practice']);
