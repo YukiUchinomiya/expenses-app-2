@@ -19,8 +19,8 @@
         <section class="wrapper form">
             <div class="content-form">
                 <h2 class="form-title">以下のデータを削除しますか？</h2>
-                <form method="post" action="{{ route('contents.update', $user) }}">
-                    @method('PATCH')
+                <form method="delete" action="{{ route('contents.destory', $user) }}">
+                    @method('DELETE')
                     @csrf
                     <div class="form-list">
                         <label for="category">項目</label>

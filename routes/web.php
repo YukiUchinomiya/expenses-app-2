@@ -35,5 +35,8 @@ Route::patch('update/{user}', [UserController::class, 'update'])
 Route::get('delete/{user}', [UserController::class, 'delete'])
     ->name('contents.delete');
 
+Route::delete('destory', [UserController::class, 'destory'])
+    ->name('contents.destory');
+
 //試行用
 Route::get('practice', [UserController::class, 'practice']);

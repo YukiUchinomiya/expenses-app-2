@@ -16,7 +16,7 @@
         </div>
     </header>
     <main>
-        <!-- 入力フォーム -->
+        <!-- 編集フォーム -->
         <section class="wrapper form">
             <div class="content-form">
                 <h2 class="form-title">詳細</h2>
@@ -26,10 +26,16 @@
                     <div class="form-list">
                         <label for="category">項目</label>
                         <input type="text" class="item" name="category" placeholder="食費" value="{{ old('category', $user->category) }}">
+                        @error('category')
+                            <div class="error">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-list">
                         <label for="price">金額</label>
                         <input type="text" class="price" name="price" placeholder="1000" value="{{ old('price', $user->price) }}">
+                        @error('price')
+                            <div class="error">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-list">
                         <label for="note">メモ</label>
