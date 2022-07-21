@@ -24,7 +24,7 @@
                     @csrf
                     <div class="form-list">
                         <label for="category">項目</label>
-                        <input type="text" class="item" name="category" placeholder="食費" value="{{ old('title') }}">
+                        <input type="text" class="item" name="category" placeholder="食費" value="{{ old('category') }}">
                         @error('category')
                             <div class="error">{{ $message }}</div>
                         @enderror

@@ -15,7 +15,8 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::latest()->get();
+        $users = User::oldest()
+            ->get();
 
         return view('contents.index')
             ->with(['users' => $users]);
@@ -59,13 +60,6 @@ class UserController extends Controller
 
         return view('contents.delete')
             ->with(['user' => $user]);
-    }
-
-    public function destory(User $user)
-    {
-        $user->delete();
-
-        return view('contents.destory');
     }
 
     public function practice()

@@ -14,9 +14,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('contents.index');
-});
+Route::get('/', [UserController::class, 'index'])
+    ->name('contents.index');
 
 Route::get('index', [UserController::class, 'index'])
     ->name('contents.index');
@@ -34,9 +33,6 @@ Route::patch('update/{user}', [UserController::class, 'update'])
 
 Route::get('delete/{user}', [UserController::class, 'delete'])
     ->name('contents.delete');
-
-Route::delete('destory', [UserController::class, 'destory'])
-    ->name('contents.destory');
 
 //試行用
 Route::get('practice', [UserController::class, 'practice']);
