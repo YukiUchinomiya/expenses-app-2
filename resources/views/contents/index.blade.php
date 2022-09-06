@@ -12,7 +12,7 @@
     <!--タイトル-->
     <header>
         <div class="page-header">
-            <h1 class="title-text">accountbook</h1>
+            <h1 class="title-text">家計簿</h1>
         </div>
     </header>
     <main>
