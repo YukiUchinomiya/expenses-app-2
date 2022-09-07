@@ -41,7 +41,7 @@
                         <input type="text" class="text" name="note" placeholder="コンビニで購入" value="{{ old('note') }}">
                     </div>
                     <div class="form-list-btn">
-                        <button class="submit-button" type="submit" name="submit-button">送信</button>
+                        <button id="submit-event" onclick="submitAlert()" class="submit-button" type="submit" name="submit-button">送信</button>
                     </div>
                 </form>
             </div>
@@ -71,6 +71,6 @@
             </div>
         </section>
     </main>
-<script src="js/main.js"></script>
+    <script src="{{ asset('script.js') }}"></script>
 </body>
 </html>
